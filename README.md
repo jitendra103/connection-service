@@ -1,21 +1,26 @@
 # Required Technologies
-1. mvn
+1. Maven
 2. Java 8
 3. Spring Boot 2.3.x
-4. Jersery api
+4. Spring Rest Api
+5. Junit 4.x
+6. logback logger
+7. Swagger
+8. Spring boot actuator 
 
 
 
 # Overview
 
-This application create a API for checking if path exist between two cities using a predefined map of cities.
-1. We have are using  graph data structrue to hold cities info. Data are stored in Adjacency List. Size of list is equal to the node/vertices.
-2. Used Depth-first search to find the  conneting vertex.
+This application create a API for checking if path or connection exist between two cities using a predefined map of cities.
+
+1. We are using  graph data structure to hold cities info. Data are stored in Adjacency List. Size of list is equal to the node/vertices.
+2. Used Depth-first search to find the connecting vertex or node.
 3. Search is directed i:e origin to destination.
 
 # Default Map
 
-The sample map contains the following paths.  This is configurable and can be changed.
+The sample map contains the following paths. This is configurable and can be changed.
 
 ```
 Boston, New York
@@ -26,53 +31,43 @@ Trenton, Albany
 
 # API documentation and testing tool using swagger
 
+http://localhost:8080/swagger-ui/#/city-connected-controller
 
 
-# Development and Execution
+# Development and Execution Section
 
-This section describes the development and execution environment and steps.  
+Below are Development and Execution Section
 
 ## Build and Run Unit Test
 
 ```
-./mvnw clean package
-```
+[Unix]
+./mvnw clean package 
 
-## Build and Run Test
-
-```
-./mvnw clean test
+[Window]
+mvnw clean package
 ```
 
 ## Run Service
 
-
-## Run Service with Spring Boot
-
 ```
+[Unix]
 ./mvnw clean test spring-boot:run
 
+[Window]
+mvnw clean test spring-boot:run
+
 ```
-
-## Run service with external city map file
-
-
 # Services and Example
 
 This section demonstrate call to invoke the services the application provides. 
 
-## Find Path using curl
+## Find Connection using curl
 
 Using curl command to run on Unix or Window machine. 
 
 ```
 curl -X GET -G --data-urlencode "origin=Boston" --data-urlencode "destination=New York" http://localhost:8080/connected
 ```
-
-
-
-
-
-
 
 
