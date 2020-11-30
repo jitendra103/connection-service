@@ -1,0 +1,9 @@
+spring:
+
+server:
+  servlet:
+    context-path: /
+
+path-finder:
+  graph:
+    file: city.txt
