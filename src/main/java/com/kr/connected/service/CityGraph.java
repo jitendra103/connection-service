@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.kr.connected.model.CityEdge;
 
 /**
- * Directed Graph of the connections of the cities
+ * Directed Graph in the form of Adjacency List of the connections of the cities.
  */
 @Component
 public class CityGraph {
@@ -25,13 +25,14 @@ public class CityGraph {
 	}
 	/*
 	 * Creating vertex of unique value/index
+	 * create a list of blank edges/connection
 	 */
 	public void addVertex(String info) {
 		vertices.putIfAbsent(info,index++);
 		adjList.add(new ArrayList<>());
 	}
 	/**
-	 * Add Edges to directed graph.
+	 * Add Edges to directed graph in the form of adjacency List .
 	 * @param from
 	 * @param to
 	 */
@@ -48,12 +49,12 @@ public class CityGraph {
 	 * @param edge
 	 * @return
 	 */
-	public  boolean traverseNode(final CityEdge edge) {
+	public  String traverseNode(final CityEdge edge) {
 		Stack<String> destination = new Stack<>();
 		destination.add(edge.getOriginCity());
-		boolean isFindConneton = false ;
+		String isFindConneton = "no" ;
 		while(!destination.isEmpty()) {
-			Integer index = -1;
+			int  index = 0;
 			String element = destination.pop();
 			if(vertices.get(element) != null) {
 				index = vertices.get(element);
@@ -64,7 +65,7 @@ public class CityGraph {
 			for(String searchNode : adjList.get(index)) {
 				destination.add(searchNode);
 				if(edge.getDestCity().equalsIgnoreCase(searchNode)) {
-					isFindConneton = true; 
+					isFindConneton = "yes"; 
 					destination.clear();
 					break;
 				}

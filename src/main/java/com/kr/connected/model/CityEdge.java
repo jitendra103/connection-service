@@ -26,7 +26,7 @@ public class CityEdge {
 	}
 	@Override
 	public String toString() {
-		return "CityEdge [fromCity=" + originCity + ", toCity=" + destCity + "]";
+		return "CityEdge [originCity=" + originCity + ", destCity=" + destCity + "]";
 	}
 	
 }

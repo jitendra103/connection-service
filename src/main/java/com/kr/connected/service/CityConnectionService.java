@@ -67,7 +67,7 @@ public class CityConnectionService {
 	 * @param toCity
 	 * @return
 	 */
-	public boolean findConnection(String origin, String dest) {
+	public String findConnection(String origin, String dest) {
 		return cityGraph.traverseNode(new CityEdge(origin, dest));
 	}
 }

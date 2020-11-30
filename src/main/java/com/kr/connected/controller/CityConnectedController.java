@@ -29,10 +29,9 @@ public class CityConnectedController {
 	@ApiResponses(value = {
 			@ApiResponse(code = 200 , message = " City connection found not found" , response = Boolean.class)
 	})
-	public Boolean connectionExist(@RequestParam String origin, @RequestParam String destination) {
+	public String connectionExist(@RequestParam String origin, @RequestParam String destination) {
 		logger.debug(String.format("Connection input -> %s : %s", origin,destination));
-		// TODO Auto-generated method stub
 		return cityConnectionService.findConnection(origin, destination);
-	}
+	}	
 
 }
