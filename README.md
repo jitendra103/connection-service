@@ -6,6 +6,8 @@
 5. Junit 4.x
 6. logback logger
 7. Swagger
+8. Jacoco Plugin for code coverage.
+9. Mockito framework
 8. Spring boot actuator 
 
 

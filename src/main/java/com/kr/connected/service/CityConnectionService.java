@@ -23,9 +23,13 @@ import com.kr.connected.model.CityEdge;
 public class CityConnectionService {
 
 	private static final Logger logger = LoggerFactory.getLogger(CityConnectionService.class);
-
-	@Autowired
+	
 	private CityGraph cityGraph;
+	
+	@Autowired
+	public void setCityGraph(CityGraph cityGraph) {
+		this.cityGraph = cityGraph;
+	}
 	
 	/**
 	 * Load the input city data at startup.

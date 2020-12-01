@@ -12,7 +12,7 @@ import com.kr.connected.model.CityEdge;
 /**
  * Directed Graph in the form of Adjacency List of the connections of the cities.
  */
-@Component
+@Component("cityGraph")
 public class CityGraph {
 	// store the vertices in a map for improved load and processing time.
 	private final Map<String, Integer> vertices;
